@@ -5,6 +5,8 @@ import com.hdesamsetti.springbootlucenesearch.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class EmployeeService {
 
@@ -13,5 +15,9 @@ public class EmployeeService {
 
     public int getTotalEmployeeCount(){
         return (int) employeeDAO.count();
+    }
+
+    public Optional<Employee> findEmployeeById(long id) {
+        return employeeDAO.findById(id);
     }
 }
