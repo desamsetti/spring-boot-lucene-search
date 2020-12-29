@@ -1,4 +1,14 @@
 # Starter pipeline
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(0f0eb357-8bf9-43a5-8370-8a4ad3affbff)'
+    appType: 'webApp'
+    WebAppName: 'shanmuk123'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'testgroup'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
